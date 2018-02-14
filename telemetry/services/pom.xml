@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-    <groupId>com.java</groupId>
-    <artifactId>energytracker</artifactId>
+    <groupId>com.java.energytracker</groupId>
+    <artifactId>telemetry</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.java.energytracker</groupId>
-  <artifactId>telemetry</artifactId>
-  <name>telemetry</name>
+  <groupId>com.java.energytracker.telemetry</groupId>
+  <artifactId>services</artifactId>
+  <name>services</name>
   <packaging>pom</packaging>
   
   <properties>
@@ -18,9 +18,8 @@
   </properties>
   
   <modules>
-	<module>services</module>
-    <module>telemetry-web</module>
-    <module>telemetry-core</module>
-    <module>telemetry-model</module>
+  	<module>service-core</module>
+  	<module>service-mqtt</module>
+    <module>service-coap</module>
   </modules>
 </project>
