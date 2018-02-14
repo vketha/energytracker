@@ -10,24 +10,18 @@
   </parent>
   
   <groupId>com.java.energytracker.telemetry.services</groupId>
-  <artifactId>service-mqtt</artifactId>
-  <name>service-mqtt</name>
-  <packaging>jar</packaging>
-
+  <artifactId>service-data</artifactId>
+  <name>service-data</name>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+  
   <dependencies>
     <dependency>
-      <groupId>com.java.energytracker.telemetry.services</groupId>
-  	  <artifactId>service-core</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>com.java.energytracker.telemetry.services</groupId>
-  	  <artifactId>service-data</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

@@ -18,6 +18,7 @@
   </properties>
   
   <modules>
+  	<module>service-data</module>
   	<module>service-core</module>
   	<module>service-mqtt</module>
     <module>service-coap</module>
