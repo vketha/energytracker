@@ -38,7 +38,7 @@ public class Architecture {
 		Container cassandraContainer = createDatabaseContainer("Telemetry Data Store", "Stores energy consumption data", "Cassandra Database");
 		Container mySQLContainer = createDatabaseContainer("Incentive Data Store", "Stores goals, badges and incentives information", "MySQL Database");
 		Container clientAppContainer = createContainer("Client Application", "Allows customer to view energy consumption data", "HTML, CSS and JavaScript");
-		Container telemetryApiContainer = createContainer("Telemetry API", "Provides JSON-based Web API", "Java and Spring MVC");
+		Container telemetryApiContainer = createContainer("Telemetry API", "Provides JSON-based Web API", "Java, Spring MVC and Web Sockets");
 		Container incentiveApiContainer = createContainer("Incentive API", "Provides JSON-based Web API", "Java and Spring MVC");
 		Container webAppContainer = createContainer("Web Application", "Serves static and dynamic content to users", "Java and Spring MVC");
 		Container mqttContainer = createContainer("MQTT Service", "Enables IoT devices to communicate using MQTT protocol", "Java and Spring MVC");
