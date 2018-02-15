@@ -9,8 +9,8 @@
   </parent>
   
   <groupId>com.java.energytracker</groupId>
-  <artifactId>telemetry</artifactId>
-  <name>telemetry</name>
+  <artifactId>services</artifactId>
+  <name>services</name>
   <packaging>pom</packaging>
   
   <properties>
@@ -18,8 +18,9 @@
   </properties>
   
   <modules>
-    <module>telemetry-web</module>
-    <module>telemetry-core</module>
-    <module>telemetry-model</module>
+  	<module>service-data</module>
+  	<module>service-core</module>
+  	<module>service-mqtt</module>
+    <module>service-coap</module>
   </modules>
 </project>

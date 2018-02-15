@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.java.energytracker.commons.dto.BaseDto;
 import com.java.energytracker.commons.dto.ResponseDto;
@@ -19,8 +18,7 @@ import com.java.energytracker.commons.dto.ResponseDto;
  * @author vijayk
  *
  */
-@RestController
-public abstract class AbstractCrudController<T extends BaseDto, ID> implements CrudController<T, ID> {
+public abstract class AbstractCrudController<T extends BaseDto, ID> extends BaseController implements CrudController<T, ID> {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseDto<T> addEntity(@RequestBody T body) {
@@ -48,38 +46,5 @@ public abstract class AbstractCrudController<T extends BaseDto, ID> implements C
 		Optional<T> result = get(id);
 		
 		return result.isPresent() ? successReponse(result.get()) : failureResponse("Entity not found"); 
-	}
-	
-	
-	protected <V extends BaseDto> ResponseDto<V> successReponse() {
-		return new ResponseDto<>(SUCCESS, "");
-	}
-	
-	protected <V extends BaseDto> ResponseDto<V> successReponse(String message) {
-		return new ResponseDto<>(SUCCESS, message);
-	}
-	
-	protected <V> ResponseDto<V> successReponse(V content) {
-		return new ResponseDto<V>(SUCCESS, "", content);
-	}
-	
-	protected <V> ResponseDto<V> successReponse(String message, V content) {
-		return new ResponseDto<V>(SUCCESS, message, content);
-	}
-	
-	protected <V> ResponseDto<V> failureReponse() {
-		return new ResponseDto<V>(FAILURE, "");
-	}
-	
-	protected <V> ResponseDto<V> failureResponse(String message) {
-		return new ResponseDto<V>(FAILURE, message);
-	}
-	
-	protected <V> ResponseDto<V> failureResponse(V content) {
-		return new ResponseDto<V>(FAILURE, "", content);
-	}
-	
-	protected <V> ResponseDto<V> failureResponse(String message, V content) {
-		return new ResponseDto<V>(FAILURE, message, content);
-	}
+	}	
 }
