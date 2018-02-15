@@ -41,6 +41,8 @@ public class Architecture {
 		Container telemetryApiContainer = createContainer("Telemetry API", "Provides JSON-based Web API", "Java and Spring MVC");
 		Container incentiveApiContainer = createContainer("Incentive API", "Provides JSON-based Web API", "Java and Spring MVC");
 		Container webAppContainer = createContainer("Web Application", "Serves static and dynamic content to users", "Java and Spring MVC");
+		Container mqttContainer = createContainer("MQTT Service", "Enables IoT devices to communicate using MQTT protocol", "Java and Spring MVC");
+		Container coapContainer = createContainer("CoAP Service", "Enables IoT devices to communicate using CoAP protocol", "Java and Spring MVC");
 
 		customer.uses(clientAppContainer, "Uses");
 		thirdPartyApp.uses(telemetryApiContainer, "Uses", "JSON/HTTPS");
@@ -50,7 +52,10 @@ public class Architecture {
 		telemetryApiContainer.uses(cassandraContainer, "Reads from and writes to", "JDBC");
 		incentiveApiContainer.uses(telemetryApiContainer, "Takes telemetry analytics from", "JSON/HTTPS");
 		incentiveApiContainer.uses(mySQLContainer, "Reads from and writes to", "JDBC");
-		telemetryApiContainer.uses(iotDevices, "Takes telemetry data from", "MQTT, CoAP");
+		iotDevices.uses(mqttContainer, "Publishes telemetry data", "MQTT");
+		iotDevices.uses(coapContainer, "Publishes telemetry data", "CoAP");
+		mqttContainer.uses(cassandraContainer, "Reads from and writes to", "JDBC");
+		coapContainer.uses(cassandraContainer, "Reads from and writes to", "JDBC");
 		
 		createContextView(workspace, currentSystem);
 		createContainerView(workspace, currentSystem);			
