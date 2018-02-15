@@ -11,16 +11,17 @@ import org.springframework.data.cassandra.mapping.Table;
 
 @Table
 public class DeviceReading {
-	@PrimaryKeyColumn(name = "id", ordinal = 1, type=PrimaryKeyType.PARTITIONED)
+	@PrimaryKeyColumn(name = "device_id", ordinal = 1, type=PrimaryKeyType.PARTITIONED)
 	private UUID deviceId;
 	
-	@PrimaryKeyColumn(name = "id", ordinal = 0, type=PrimaryKeyType.PARTITIONED)
+	@PrimaryKeyColumn(name = "home_id", ordinal = 0, type=PrimaryKeyType.PARTITIONED)
 	private UUID homeId;
 	
 	private Double reading;
 	
 	private String units;
 	
+	@PrimaryKeyColumn(name = "date", ordinal = 0, type=PrimaryKeyType.CLUSTERED)
 	private Date date; 
 	
 	@Column

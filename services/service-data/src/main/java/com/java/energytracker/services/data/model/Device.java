@@ -15,9 +15,9 @@ public class Device {
 	
 	private String name;
 	
-	@PrimaryKeyColumn(name = "id", ordinal = 0, type=PrimaryKeyType.PARTITIONED)
+	@PrimaryKeyColumn(name = "home_id", ordinal = 0, type=PrimaryKeyType.PARTITIONED)
 	private UUID homeId;
-	
+		
 	private Map<String, Object> additionalInfo;
 
 	public Device(UUID id, String name, UUID homeId) {
