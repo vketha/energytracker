@@ -1,5 +1,6 @@
 package com.java.energytracker.telemetry.services.data.model;
 
+import java.util.Date;
 import java.util.Map;
 import java.util.UUID;
 
@@ -20,18 +21,21 @@ public class DeviceReading {
 	
 	private String units;
 	
+	private Date date; 
+	
 	@Column
 	private Map<String, Object> additionalInfo;
 
-	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units) {
+	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units, Date date) {
 		this.homeId = homeId;
 		this.deviceId = deviceId;
 		this.reading = reading;
 		this.units = units;
+		this.setDate(date);
 	}
 
-	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units, Map<String, Object> additionalInfo) {
-		this(homeId, deviceId, reading, units);
+	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units, Date date, Map<String, Object> additionalInfo) {
+		this(homeId, deviceId, reading, units, date);
 		this.additionalInfo = additionalInfo;
 	}
 	
@@ -73,5 +77,13 @@ public class DeviceReading {
 
 	public void setAdditionalInfo(Map<String, Object> additionalInfo) {
 		this.additionalInfo = additionalInfo;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }
