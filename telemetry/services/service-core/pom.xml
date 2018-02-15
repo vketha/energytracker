@@ -23,6 +23,7 @@
   		<groupId>com.java.energytracker.telemetry.services</groupId>
   		<artifactId>service-data</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
+  		<scope>compile</scope>
   	</dependency>
   </dependencies>
 </project>

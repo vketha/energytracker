@@ -3,7 +3,7 @@
  */
 package com.java.energytracker.telemetry.services.core;
 
-import com.java.energytracker.telemetry.services.data.model.Event;
+import com.java.energytracker.telemetry.services.data.model.DeviceReading;
 
 /**
  * @author vijayk
@@ -12,7 +12,7 @@ import com.java.energytracker.telemetry.services.data.model.Event;
 public abstract class AbstractMessageHandler<T extends Message> implements MessageHandler<T> {
 	
 	public void onMessageReceived(T message) {
-		Event event = process(message);
+		DeviceReading event = process(message);
 		// TODO: persist event
 	}
 }

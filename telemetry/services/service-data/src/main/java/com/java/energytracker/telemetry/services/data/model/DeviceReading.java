@@ -1,0 +1,77 @@
+package com.java.energytracker.telemetry.services.data.model;
+
+import java.util.Map;
+import java.util.UUID;
+
+import org.springframework.cassandra.core.PrimaryKeyType;
+import org.springframework.data.cassandra.mapping.Column;
+import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
+import org.springframework.data.cassandra.mapping.Table;
+
+@Table
+public class DeviceReading {
+	@PrimaryKeyColumn(name = "id", ordinal = 1, type=PrimaryKeyType.PARTITIONED)
+	private UUID deviceId;
+	
+	@PrimaryKeyColumn(name = "id", ordinal = 0, type=PrimaryKeyType.PARTITIONED)
+	private UUID homeId;
+	
+	private Double reading;
+	
+	private String units;
+	
+	@Column
+	private Map<String, Object> additionalInfo;
+
+	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units) {
+		this.homeId = homeId;
+		this.deviceId = deviceId;
+		this.reading = reading;
+		this.units = units;
+	}
+
+	public DeviceReading(UUID homeId, UUID deviceId, Double reading, String units, Map<String, Object> additionalInfo) {
+		this(homeId, deviceId, reading, units);
+		this.additionalInfo = additionalInfo;
+	}
+	
+	public UUID getDeviceId() {
+		return deviceId;
+	}
+
+	public void setDeviceId(UUID deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	public UUID getHomeId() {
+		return homeId;
+	}
+
+	public void setHomeId(UUID homeId) {
+		this.homeId = homeId;
+	}
+
+	public Double getReading() {
+		return reading;
+	}
+
+	public void setReading(Double reading) {
+		this.reading = reading;
+	}
+
+	public String getUnits() {
+		return units;
+	}
+
+	public void setUnits(String units) {
+		this.units = units;
+	}
+
+	public Map<String, Object> getAdditionalInfo() {
+		return additionalInfo;
+	}
+
+	public void setAdditionalInfo(Map<String, Object> additionalInfo) {
+		this.additionalInfo = additionalInfo;
+	}
+}

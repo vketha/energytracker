@@ -4,7 +4,7 @@
 package com.java.energytracker.telemetry.services.mqtt;
 
 import com.java.energytracker.telemetry.services.core.AbstractMessageHandler;
-import com.java.energytracker.telemetry.services.data.model.Event;
+import com.java.energytracker.telemetry.services.data.model.DeviceReading;
 
 /**
  * @author vijayk
@@ -13,7 +13,7 @@ import com.java.energytracker.telemetry.services.data.model.Event;
 public class MqttMessageHandler extends AbstractMessageHandler<MqttMessage> {
 
 	@Override
-	public Event process(MqttMessage message) {
+	public DeviceReading process(MqttMessage message) {
 		// TODO Auto-generated method stub
 		return null;
 	}

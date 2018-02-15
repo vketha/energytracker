@@ -3,7 +3,7 @@
  */
 package com.java.energytracker.telemetry.services.core;
 
-import com.java.energytracker.telemetry.services.data.model.Event;
+import com.java.energytracker.telemetry.services.data.model.DeviceReading;
 
 /**
  * @author vijayk
@@ -11,5 +11,5 @@ import com.java.energytracker.telemetry.services.data.model.Event;
  */
 public interface MessageHandler<T extends Message> {
 	
-	public Event process(T message);
+	public DeviceReading process(T message);
 }

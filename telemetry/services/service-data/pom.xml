@@ -18,10 +18,16 @@
   </properties>
   
   <dependencies>
+    	<dependency>
+         <groupId>org.springframework.data</groupId>
+         <artifactId>spring-data-cassandra</artifactId>
+    </dependency>
+        
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
+    
   </dependencies>
 </project>
