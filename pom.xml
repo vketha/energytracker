@@ -57,6 +57,7 @@
 	</build>
 
   <modules>
+    <module>commons</module>
     <module>ui</module>
     <module>telemetry</module>
     <module>incentive</module>

@@ -4,26 +4,20 @@
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
-    <groupId>com.java.energytracker</groupId>
-    <artifactId>incentive</artifactId>
+    <groupId>com.java</groupId>
+    <artifactId>energytracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <groupId>com.java.energytracker.incentive</groupId>
-  <artifactId>incentive-core</artifactId>
-  <name>incentive-core</name>
-  <packaging>jar</packaging>
+  <groupId>com.java.energytracker</groupId>
+  <artifactId>commons</artifactId>
+  <name>commons</name>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
   <dependencies>
-  	<dependency>
-  		<groupId>com.java.energytracker</groupId>
-  		<artifactId>commons</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
